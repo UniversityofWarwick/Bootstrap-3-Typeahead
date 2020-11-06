@@ -101,9 +101,12 @@
 
         this.$parent.attr({
             'role': 'combobox',
-            'aria-autocomplete': 'both',
             'aria-haspopup': 'listbox'
         });
+
+        this.$element.attr({
+            'aria-autocomplete': 'both'
+        })
 
         // Quick calls to both ensures that target menu is created with ID, and this.$element has appropriate aria-owns attribute (ID-390)
         this.show();
@@ -226,6 +229,7 @@
             this.shown = true;
             this.$parent.attr('aria-expanded', 'true');
             this.$parent.attr('aria-owns', getOrGenId(element[0]));
+            this.$element.attr('aria-controls', getOrGenId(element[0]));
             return this;
         },
 
@@ -234,7 +238,7 @@
             this.prevItems = [];
             this.shown = false;
             this.$parent.attr('aria-expanded', 'false');
-            this.$parent.attr('aria-activedescendant', null);
+            this.$element.attr('aria-activedescendant', null);
             return this;
         },
 
