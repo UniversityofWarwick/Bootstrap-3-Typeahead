@@ -48,10 +48,14 @@ There is no additional CSS required to use the plugin. Bootstrap's CSS contains 
 ---
 
 ```
-<input type="text" class="typeahead" data-provide="typeahead">
+<div>
+    <input type="text" class="typeahead" data-provide="typeahead">
+</div>
 ```
 
 You'll want to set `autocomplete="off"` to prevent default browser menus from appearing over the Bootstrap typeahead dropdown.
+
+For compliance with the new ARIA 1.1 standard, the typeahead will attach some aria- attributes to the parent element of the input you call it on. This is not likely to be an issue in most cases, but you should check whether or not the input needs a wrapper element before applying the 4.1.0 update.
 
 ### Via data attributes
 
