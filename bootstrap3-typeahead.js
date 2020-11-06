@@ -105,7 +105,7 @@
         });
 
         this.$element.attr({
-            'aria-autocomplete': 'both'
+            'aria-autocomplete': 'list'
         })
 
         // Quick calls to both ensures that target menu is created with ID, and this.$element has appropriate aria-owns attribute (ID-390)
